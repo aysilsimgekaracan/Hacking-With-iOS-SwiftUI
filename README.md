@@ -25,3 +25,14 @@ Go back to project 1 and use a conditional modifier to change the total amount t
 :-------------------------:|:-------------------------:|:-------------------------:
 ![p3-0001](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p3-001.png)  |  ![p3-0002](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p3-002.png) |  ![p3-0003](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p3-003.png)
 
+## Project 4: BetterRest
+<details>
+  <summary>Challenges</summary>
+  <li>Replace each VStack in our form with a Section, where the text view is the title of the section.</li>
+  <li>Replace the “Number of cups” stepper with a Picker showing the same range of values.</li>
+  <li>Change the user interface so that it always shows their recommended bedtime using a nice and large font. You should be able to remove the “Calculate” button entirely.</li>
+
+</details>
+
+![p4-0001](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p4-001.png)
+
