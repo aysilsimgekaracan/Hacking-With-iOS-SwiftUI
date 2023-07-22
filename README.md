@@ -36,3 +36,16 @@ Go back to project 1 and use a conditional modifier to change the total amount t
 
 ![p4-0001](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p4-001.png)
 
+## Project 5: Word Scramble
+<details>
+  <summary>Challenges</summary>
+  <li>Disallow answers that are shorter than three letters or are just our start word.</li>
+  <li>Add a toolbar button that calls startGame(), so users can restart with a new word whenever they want to.</li>
+  <li>Put a text view somewhere so you can track and show the player’s score for a given root word. How you calculate score is down to you, but something involving number of words and their letter count would be reasonable.</li>
+
+</details>
+
+Word Scramble             |  Alert
+:-------------------------:|:-------------------------:
+![p5-0001](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p5-001.png)  |  ![p5-0002](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p5-002.png)
+
