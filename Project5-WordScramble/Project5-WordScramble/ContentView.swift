@@ -12,6 +12,9 @@ struct ContentView: View {
     @State private var rootWord = ""
     @State private var newWord = ""
     
+    @State private var numberOfWords = 0
+    @State private var score = 0
+    
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
@@ -19,6 +22,14 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+                Section {
+                    Text("Number of words: \(numberOfWords)")
+                    Text("Score: \(score)")
+                } header: {
+                    Text("Your Score")
+                }
+    
+                
                 Section {
                     TextField("Enter your word", text: $newWord)
                         .autocapitalization(.none)
@@ -35,12 +46,23 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(rootWord)
+            .navigationBarTitleDisplayMode(.large)
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
             .alert(errorTitle, isPresented: $showingError) {
                 Button("OK", role:.cancel) {}
             } message: {
                 Text(errorMessage)
+            }
+            .toolbar {
+                ToolbarItem {
+                    Button("Restart") {
+                        startGame()
+                        score = 0
+                        numberOfWords = 0
+                        usedWords.removeAll()
+                    }
+                }
             }
         }
         
@@ -49,7 +71,7 @@ struct ContentView: View {
     func startGame() {
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
-                let allWords = startWords.components(separatedBy: "/n")
+                let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
                 return
             }
@@ -65,7 +87,7 @@ struct ContentView: View {
         guard answer.count > 0 else { return }
         
         guard isOriginal(word: answer) else {
-            wordError(title: "Word used already", message: "Be more original")
+            wordError(title: "Word used already or same with root word", message: "Be more original")
             return
         }
         
@@ -79,15 +101,26 @@ struct ContentView: View {
             return
         }
         
+        // Disallow answers that are shorter than three letters.
+        if isShort(word: answer) {
+            wordError(title: "Word is too short", message: "The word should contain more than 3 letters")
+            return
+        }
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
+        
+        // Update score values
+        numberOfWords += 1
+        score += newWord.count
         
         newWord = ""
     }
     
     func isOriginal(word: String) -> Bool {
-        !usedWords.contains(word)
+        // Disallow answers that are used or are just our start word.
+        !usedWords.contains(word) && word != rootWord
     }
     
     func isPossible(word: String) -> Bool {
@@ -115,6 +148,12 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+        
+        newWord = ""
+    }
+    
+    func isShort(word: String) -> Bool {
+        word.count <= 3
     }
 
 }
