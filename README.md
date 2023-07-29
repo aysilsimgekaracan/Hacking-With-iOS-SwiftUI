@@ -49,3 +49,12 @@ Word Scramble             |  Alert
 :-------------------------:|:-------------------------:
 ![p5-0001](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p5-001.png)  |  ![p5-0002](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p5-002.png)
 
+## Project 6: Animation
+<details>
+  <summary>Challenges</summary>
+  <li>When you tap a flag, make it spin around 360 degrees on the Y axis.</li>
+  <li>Make the other two buttons fade out to 25% opacity.</li>
+  <li>Add a third effect of your choosing to the two flags the user didn’t choose – maybe make them scale down? Or flip in a different direction? Experiment!</li>
+</details>
+
+![p6-0001](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p6-001.gif)
