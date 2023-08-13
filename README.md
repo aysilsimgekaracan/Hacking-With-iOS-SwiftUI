@@ -58,3 +58,16 @@ Word Scramble             |  Alert
 </details>
 
 ![p6-0001](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p6-001.gif)
+
+## Project 7: iExpense
+<details>
+  <summary>Challenges</summary>
+  <li>Use the user’s preferred currency, rather than always using US dollars.</li>
+  <li>Modify the expense amounts in ContentView to contain some styling depending on their value – expenses under $10 should have one style, expenses under $100 another, and expenses over $100 a third style. What those styles are depend on you.</li>
+  <li>For a bigger challenge, try splitting the expenses list into two sections: one for personal expenses, and one for business expenses. This is tricky for a few reasons, not least because it means being careful about how items are deleted!</li>
+</details>
+
+iExpense            
+:-------------------------:
+![p7-0001](https://github.com/aysilsimgekaracan/Hacking-With-iOS-SwiftUI/blob/main/pics/p7-001.png)
+
